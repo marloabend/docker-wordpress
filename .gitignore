@@ -1,1 +1,19 @@
-wp-content/
+# IDE
+.idea/
+
+# OS
+.DS_Store
+
+# Database
+database/*
+!database/.gitkeep
+!database/import/
+database/import/*
+!database/import/.gitkeep
+
+# Wordpress
+wordpress/*
+!wordpress/.gitkeep
+!wordpress/import/
+wordpress/import/*
+!wordpress/import/.gitkeep

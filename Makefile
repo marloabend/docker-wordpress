@@ -9,21 +9,16 @@ detached:
 down:
 	@docker-compose down
 
-database-export: detached
-	docker exec -i database mysqldump -u root -proot wordpress --skip-comments > database/dump.sql
-	@-echo Database exported to ./database/dump.sql !
-
 database-import: detached
 	docker exec -i database mysql -u root -proot wordpress < database/import/dump.sql
 	@-echo Database imported from ./database/import/dump.sql !
 
-wordpress-export: detached
-	 @docker cp wordpress:/var/www/html ./wordpress
-	 @-echo Wordpress exported to ./wordpress/html !
-
 wordpress-import: detached
 	 @docker cp ./wordpress/import/html wordpress:/var/www/
 	 @-echo Wordpress imported !
+
+backup: detached
+	 @sh ./scripts/backup.sh
 
 shell-database:
 	 docker exec -it database sh

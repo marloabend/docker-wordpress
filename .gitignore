@@ -4,16 +4,8 @@
 # OS
 .DS_Store
 
-# Database
-database/*
-!database/.gitkeep
-!database/import/
-database/import/*
-!database/import/.gitkeep
-
-# Wordpress
-wordpress/*
-!wordpress/.gitkeep
-!wordpress/import/
-wordpress/import/*
-!wordpress/import/.gitkeep
+# Backup
+backup/*
+!backup/import/
+backup/import/*
+!backup/import/.gitkeep

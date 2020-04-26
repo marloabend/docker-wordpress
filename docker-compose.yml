@@ -18,6 +18,7 @@ services:
       - stack-network
 
   wordpress:
+    # 5.3.0-php7.2-fpm-alpine
     image: wordpress:5.1.1-fpm-alpine
     container_name: wordpress
     restart: on-failure
@@ -42,7 +43,7 @@ services:
       - "80:80"
     volumes:
       - wordpress:/var/www/html
-      - ./nginx:/etc/nginx/conf.d
+      - ./config/nginx:/etc/nginx/conf.d:ro
     networks:
       - stack-network
     depends_on:
